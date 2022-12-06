@@ -56,36 +56,14 @@ def orderBse ():
        # errorList.append(stockName)
         pass
 
-def orderBse1 (stockName):
-    exchange = 'BSE'
-    try:
-        totalQ = quantity_check(stockName, exchange)
-        p=upperCircuit(stockName, exchange)
-        for i in range (1):
-            order_id = kite.place_order(variety=kite.VARIETY_AMO,
-                                tradingsymbol=stockName,
-                                exchange=kite.EXCHANGE_BSE,
-                                transaction_type=kite.TRANSACTION_TYPE_BUY,
-                                quantity=totalQ,
-                                order_type=kite.ORDER_TYPE_LIMIT,
-                                price=p,
-                                product=kite.PRODUCT_CNC,
-                                validity=kite.VALIDITY_DAY)
-            #forCheckBse.append(stockName)
-        return order_id
-    except Exception as e:
-        print(f'{stockName} skipped due to error:\n{e}')
-        #errorList.append(stockName)
-        pass
-#list_creater()
+
+list_creater()
 
 def fun():
     print("Waiting for time:09_00")
     p(17,45
     ,59,80000)
-    for i in stocklist:
-        orderBse1(i)
-    #orderBse()
+    orderBse()
 
 fun()
 print(stocklist, pricelist, quantitylist)
